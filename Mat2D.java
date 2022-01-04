@@ -28,9 +28,9 @@ public class Mat2D
 	public double somme1Ligne(int i) //méthode qui retourne la somme des élements d'une ligne
 	{
 		double var=0;
-		for (int j=0; j<T[i].length;j++)
+		for (int j=0; j<T[i-1].length;j++)
 		{
-			var=var+T[i][j];
+			var=var+T[i-1][j];
 		}
 		return var;
 	}
@@ -48,13 +48,13 @@ public class Mat2D
 		double var=0;
 		for(int i=0; i<T.length;i++)
 		{
-			var=var+somme1Ligne(i);
+			var=var+somme1Ligne(i+1);
 		}
 		return var;
 	}
 	public double moyenne() //méthode qui calcule la moyenne des élements de la table
 	{
-		return (sommeElements()/nombreElements);
+		return (sommeElements()/nombreElements());
 	}
 	public double elementPlusGrand() //méthode qui retourne le plus grand élement du tableau
 	{
@@ -81,11 +81,28 @@ public class Mat2D
 		{
 			while(var==false && j<T[i].length)
 			{
-				var=(T[i][j]==a);
+				if(T[i][j]==a)
+				{
+					var=true;
+				}
 				j++;
 			}
+			j=0;
 			i++;
 		}
 		return var;
+	}
+	public static void main(String args[]) //le main pour tester les différentes méthodes
+	{
+		double [][] tableau ={{7,3,1,5},{1,2},{55}, {4,8,9}};
+		Mat2D mat = new Mat2D(tableau);
+		mat.affiche();
+		System.out.println("La somme des élements de la 2 eme ligne: "+mat.somme1Ligne(2));
+		System.out.println("Le nombre d'élements du tableau est: "+mat.nombreElements());
+		System.out.println("La somme des élements du tableau est : "+mat.sommeElements());
+		System.out.println("La moyenne est: "+mat.moyenne());
+		System.out.println("Le plus grand élement est: "+mat.elementPlusGrand());
+		System.out.println("existe il le nombre 55 dans le tableau? ... "+mat.existence(55));
+		
 	}
 }
