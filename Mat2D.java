@@ -34,4 +34,13 @@ public class Mat2D
 		}
 		return var;
 	}
+	public int nombreElements() //méthode qui calcule le nombre d'élements d'un tableau 2D
+	{
+		int a=0;
+		for(int i=0; i<T.length;i++)
+		{
+			a=a+T[i].length;
+		}
+		return a;
+	}
 }
