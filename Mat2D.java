@@ -56,4 +56,20 @@ public class Mat2D
 	{
 		return (sommeElements()/nombreElements);
 	}
+	public double elementPlusGrand() //méthode qui retourne le plus grand élement du tableau
+	{
+		double var;
+		var=T[0][0];
+		for(int i=0;i<T.length;i++)
+		{
+			for(int j=0; j<T[i].length;j++)
+			{
+				if(var < T[i][j])
+				{
+					var=T[i][j];
+				}
+			}
+		}
+		return var;
+	}
 }
