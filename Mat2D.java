@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Mat2D
 {
 	private double T[][];
@@ -94,6 +95,7 @@ public class Mat2D
 	}
 	public static void main(String args[]) //le main pour tester les différentes méthodes
 	{
+		Scanner scanner = new Scanner(System.in);
 		double [][] tableau ={{7,3,1,5},{1,2},{55}, {4,8,9}};
 		Mat2D mat = new Mat2D(tableau);
 		mat.affiche();
@@ -102,7 +104,17 @@ public class Mat2D
 		System.out.println("La somme des élements du tableau est : "+mat.sommeElements());
 		System.out.println("La moyenne est: "+mat.moyenne());
 		System.out.println("Le plus grand élement est: "+mat.elementPlusGrand());
-		System.out.println("existe il le nombre 55 dans le tableau? ... "+mat.existence(55));
+		System.out.println("Veuillez entrer un nombre réel pour vérifier sa présence dans la table");
+		double a=scanner.nextDouble();
+		if (mat.existence(a))
+		{
+			System.out.println("Oui !!!!! le nombre "+a+" existe dans la table");
+		}
+		else
+		{
+			System.out.println("Non :( le nombre "+a+" n'existe pas dans la table");
+		}
+		
 		
 	}
 }
