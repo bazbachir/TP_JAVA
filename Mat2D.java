@@ -72,4 +72,20 @@ public class Mat2D
 		}
 		return var;
 	}
+	public boolean existence(double a) //méthode qui verifier l'existence d'un double donné dans le tableau
+	{
+		boolean var=false;
+		int i=0;
+		int j=0;
+		while(var==false && i<T.length)
+		{
+			while(var==false && j<T[i].length)
+			{
+				var=(T[i][j]==a);
+				j++;
+			}
+			i++;
+		}
+		return var;
+	}
 }
