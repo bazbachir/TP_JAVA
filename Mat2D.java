@@ -25,4 +25,13 @@ public class Mat2D
 			System.out.println(" ");
 		}
 	}
+	public double somme1Ligne(int i) //méthode qui retourne la somme des élements d'une ligne
+	{
+		double var=0;
+		for (int j=0; j<T[i].length;j++)
+		{
+			var=var+T[i][j];
+		}
+		return var;
+	}
 }
