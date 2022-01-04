@@ -52,4 +52,8 @@ public class Mat2D
 		}
 		return var;
 	}
+	public double moyenne() //méthode qui calcule la moyenne des élements de la table
+	{
+		return (sommeElements()/nombreElements);
+	}
 }
