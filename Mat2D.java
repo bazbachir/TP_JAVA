@@ -43,4 +43,13 @@ public class Mat2D
 		}
 		return a;
 	}
+	public double sommeElements() //méthode qui calcule la somme des élements du tableau
+	{
+		double var=0;
+		for(int i=0; i<T.length;i++)
+		{
+			var=var+somme1Ligne(i);
+		}
+		return var;
+	}
 }
