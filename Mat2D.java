@@ -13,4 +13,16 @@ public class Mat2D
 			}
 		}
 	}
+	public void affiche() //méthode pour l'affichage des élements du tableau 
+	{
+		System.out.println("Les élements du tableau sont:");
+		for(int i=0; i<T.length; i++)
+		{
+			for(int j=0; j<T[i].length; j++)
+			{
+				System.out.print(T[i][j]+" ");
+			}
+			System.out.println(" ");
+		}
+	}
 }
